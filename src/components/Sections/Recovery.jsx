@@ -8,7 +8,7 @@ export default function Recovery() {
 
       <div>
         <span className="rounded-full bg-white/20 px-4 py-2 text-sm">
-          LoveBack™ Recovery System
+          Private Customer Feedback
         </span>
 
         <h2 className="mt-6 text-4xl lg:text-5xl font-bold leading-tight">
@@ -16,30 +16,30 @@ export default function Recovery() {
         </h2>
 
         <p className="mt-6 text-xl text-indigo-100">
-          LoveBack automatically identifies unhappy customers and launches
-          recovery workflows before negative experiences become public.
+          Instead of losing unhappy customers to public reviews, 
+          LoveView lets them share feedback privately so your team can understand and resolve issues.
         </p>
 
         <div className="mt-10 space-y-4">
 
           <div className="flex gap-3">
             <span>✓</span>
-            <span>Instant Alerts</span>
+            <span>✓ Capture private customer feedback</span>
           </div>
 
           <div className="flex gap-3">
             <span>✓</span>
-            <span>Recovery Offers</span>
+            <span>✓ Understand common customer issues</span>
           </div>
 
           <div className="flex gap-3">
             <span>✓</span>
-            <span>Retention Campaigns</span>
+            <span>✓ Reduce negative public reviews</span>
           </div>
 
           <div className="flex gap-3">
             <span>✓</span>
-            <span>Customer Win-Back Automation</span>
+            <span>✓ Improve customer experience</span>
           </div>
 
         </div>
@@ -50,21 +50,21 @@ export default function Recovery() {
         <div className="rounded-3xl bg-white p-8 text-slate-900 shadow-2xl">
 
           <h3 className="font-bold text-xl">
-            Recovery Dashboard
+            Private Feedback Dashboard
           </h3>
 
           <div className="mt-8 space-y-4">
 
             <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-              Customer unhappy → Offer sent
+              📝 New private feedback received
             </div>
 
             <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-              Recovery rate: 38%
+              📌 Most reported issue: Waiting Time
             </div>
 
             <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
-              Revenue recovered: $2,540
+              📊 Private feedback this month: 18
             </div>
 
           </div>

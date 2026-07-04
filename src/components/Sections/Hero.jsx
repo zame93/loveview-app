@@ -8,22 +8,21 @@ export default function Hero() {
           <div>
 
             <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm text-indigo-700">
-              Reviews • Feedback • Rewards • Retention
+              Google Reviews • Private Feedback • Customer Insights
             </span>
 
             <h1 className="mt-6 text-5xl font-bold leading-tight">
-  Get More Reviews.
-  <br />
-  Recover Unhappy Customers.
-  <br />
-  <span className="text-indigo-600">
-    Grow Repeat Business.
-  </span>
+  Collect More
+Google Reviews.
+<br />
+<span className="text-indigo-600">
+Capture Private Feedback Before It Becomes Public.
+</span>
 </h1>
 
             <p className="mt-6 text-xl text-slate-600">
-              Capture feedback first, route happy customers to Google Reviews,
-              and recover unhappy customers before they're lost forever.
+              LoveView helps restaurants, cafés, salons and local businesses collect more Google reviews, capture Private Feedback, 
+              and understand customer satisfaction from one simple dashboard.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -33,19 +32,19 @@ export default function Hero() {
   rel="noopener noreferrer"
   className="rounded-lg bg-indigo-600 px-6 py-3 text-white hover:bg-indigo-700 transition"
 >
-  Book Demo
+  Start Free Trial
 </a>
 
               <button className="rounded-lg border border-slate-300 px-6 py-3">
-                See Live Demo
+                See How It Works
               </button>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4 text-sm text-slate-600">
-              <span>✓ More Reviews</span>
-              <span>✓ Better Ratings</span>
-              <span>✓ Repeat Customers</span>
-              <span>✓ Multi-Location Ready</span>
+              <span>✓ 2-Minute Setup</span>
+              <span>✓ QR Code Included</span>
+              <span>✓ No App Required</span>
+              <span>✓ Works With Google Reviews</span>
             </div>
 
           </div>
@@ -56,7 +55,7 @@ export default function Hero() {
 
   <div className="flex items-center justify-between">
     <h3 className="font-bold text-lg">
-      LoveView Dashboard
+      Live Review Dashboard
     </h3>
 
     <span className="rounded-full bg-green-100 px-3 py-1 text-sm text-green-700">
@@ -80,7 +79,7 @@ export default function Hero() {
         482
       </div>
       <div className="text-sm text-slate-500">
-        Reviews
+        Google Reviews
       </div>
     </div>
 
@@ -98,7 +97,7 @@ export default function Hero() {
         134
       </div>
       <div className="text-sm text-slate-500">
-        Recovered
+        Private Feedback
       </div>
     </div>
 
@@ -106,7 +105,7 @@ export default function Hero() {
 
   <div className="mt-8 rounded-xl bg-slate-50 p-5">
     <div className="text-sm font-semibold text-slate-700">
-      Recent Reviews
+      Recent Customer Activity
     </div>
 
     <div className="mt-4 space-y-3">

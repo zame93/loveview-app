@@ -1,15 +1,20 @@
-export default function Features() {
+export default function Journey() {
   return (
     <>
-      {<section className="py-16 bg-slate-50">
+      {
+        
+        <section
+  id="how-it-works"
+  className="py-16 bg-slate-50"
+>
   <div className="mx-auto max-w-6xl px-6">
 
     <h2 className="text-center text-4xl font-bold">
-      From Visit To Repeat Customer In 3 Steps
+      How LoveView Helps Your Business
     </h2>
 
     <p className="mt-4 text-center text-slate-600 max-w-2xl mx-auto">
-      LoveLink captures customer sentiment before it becomes public and routes every customer to the right next step.
+      Collect more Google reviews while capturing private customer feedback through one simple QR code.
     </p>
 
     <div className="mt-16 grid gap-8 md:grid-cols-3">
@@ -20,11 +25,11 @@ export default function Features() {
         </div>
 
         <h3 className="mt-4 text-2xl font-bold">
-          Customer Visits
+          Customer Scans QR
         </h3>
 
         <p className="mt-3 text-slate-600">
-          Customer scans a QR code or receives a review request link.
+          Customers scan your LoveView QR code after their visit or purchase.
         </p>
       </div>
 
@@ -34,11 +39,11 @@ export default function Features() {
         </div>
 
         <h3 className="mt-4 text-2xl font-bold">
-          Customer Rates Experience
+          Rate Their Experience
         </h3>
 
         <p className="mt-3 text-slate-600">
-          LoveView captures feedback privately before it reaches Google.
+          Customers rate their experience in seconds using a simple 1–5 star review flow.
         </p>
       </div>
 
@@ -48,11 +53,12 @@ export default function Features() {
         </div>
 
         <h3 className="mt-4 text-2xl font-bold">
-          Smart Routing
+          Smart Review Routing
         </h3>
 
         <p className="mt-3 text-slate-600">
-          Happy customers go to Google Reviews. Unhappy customers enter LoveBack recovery.
+          Happy customers are guided to leave a Google review. 
+          Unhappy customers share private feedback directly with your business.
         </p>
       </div>
 

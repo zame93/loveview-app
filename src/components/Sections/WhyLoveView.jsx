@@ -1,108 +1,96 @@
 export default function WhyLoveView() {
-    return (
-        <>
-            {<section id="features" className="py-16 bg-white">
-  <div className="max-w-6xl mx-auto px-6">
+  return (
+    <section
+  id="why-loveview"
+  className="py-20 bg-slate-50"
+>
+      <div className="max-w-6xl mx-auto px-6">
 
-    <div className="text-center mb-14">
-      <span className="text-sm font-semibold text-indigo-600 uppercase tracking-wider">
-        Why LoveView
-      </span>
+        <div className="text-center">
 
-      <h2 className="mt-4 text-4xl font-bold text-gray-900">
-        Why Businesses Choose LoveView
-      </h2>
+          <span className="text-sm font-semibold text-indigo-600 uppercase tracking-wider">
+            Why LoveView
+          </span>
 
-      <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-        Built for busy local businesses that want more reviews,
-        better customer insights, and repeat customers.
-      </p>
-    </div>
+          <h2 className="mt-4 text-4xl font-bold text-slate-900">
+            More Than Just a Google Review QR Code
+          </h2>
 
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+            LoveView helps businesses collect more Google reviews while giving
+            unhappy customers a safe way to share private feedback and helping
+            you understand what really happens after every visit.
+          </p>
 
-      <div className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-        <div className="text-3xl mb-4">📱</div>
-        <h3 className="text-xl font-semibold mb-2">
-          No App Required
-        </h3>
-        <p className="text-gray-600">
-          Customers simply scan a QR code and share feedback instantly.
-        </p>
+        </div>
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+
+          {/* Standard QR */}
+
+          <div className="rounded-3xl border border-slate-200 bg-white p-10">
+
+            <h3 className="text-2xl font-bold">
+              Standard Google Review QR
+            </h3>
+
+            <div className="mt-8 space-y-5 text-slate-600">
+
+              <div>✅ Sends every customer to Google Reviews</div>
+
+              <div>❌ No private customer feedback</div>
+
+              <div>❌ No customer satisfaction insights</div>
+
+              <div>❌ No issue tracking</div>
+
+              <div>❌ No business dashboard</div>
+
+            </div>
+
+          </div>
+
+          {/* LoveView */}
+
+          <div className="rounded-3xl bg-indigo-600 p-10 text-white shadow-xl">
+
+            <h3 className="text-2xl font-bold">
+              LoveView
+            </h3>
+
+            <div className="mt-8 space-y-5">
+
+              <div>✅ Smart review routing</div>
+
+              <div>✅ Private customer feedback</div>
+
+              <div>✅ Customer satisfaction tracking</div>
+
+              <div>✅ Common issue insights</div>
+
+              <div>✅ Live business dashboard</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="mt-14 rounded-3xl bg-white border border-slate-200 p-10 text-center shadow-sm">
+
+          <h3 className="text-2xl font-bold text-slate-900">
+            Every Customer Experience Matters
+          </h3>
+
+          <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+            LoveView doesn't just help you collect Google reviews.
+            It helps you understand your customers, resolve issues
+            privately, and continuously improve your business.
+          </p>
+
+        </div>
+
       </div>
-
-      <div className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-        <div className="text-3xl mb-4">⚡</div>
-        <h3 className="text-xl font-semibold mb-2">
-          2-Minute Setup
-        </h3>
-        <p className="text-gray-600">
-          Launch your LoveLink, LoveBack, and dashboard in minutes.
-        </p>
-      </div>
-
-      <div className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-        <div className="text-3xl mb-4">🛡️</div>
-        <h3 className="text-xl font-semibold mb-2">
-          Understand Customer Sentiment
-        </h3>
-        <p className="text-gray-600">
-          Unhappy customers share concerns privately before posting public reviews.
-        </p>
-      </div>
-
-      <div className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-        <div className="text-3xl mb-4">⭐</div>
-        <h3 className="text-xl font-semibold mb-2">
-          Generate More Reviews
-        </h3>
-        <p className="text-gray-600">
-          Guide satisfied customers directly to your Google review page.
-        </p>
-      </div>
-
-      <div className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-        <div className="text-3xl mb-4">🎁</div>
-        <h3 className="text-xl font-semibold mb-2">
-          Increase Repeat Visits
-        </h3>
-        <p className="text-gray-600">
-          Offer discounts, freebies, and rewards that encourage repeat visits.
-        </p>
-      </div>
-
-      <div className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-        <div className="text-3xl mb-4">📊</div>
-        <h3 className="text-xl font-semibold mb-2">
-          Make Better Business Decisions
-        </h3>
-        <p className="text-gray-600">
-          See trends, common complaints, and customer satisfaction in one dashboard.
-        </p>
-      </div>
-
-    </div>
-
-    <div className="mt-12 flex flex-wrap justify-center gap-4">
-      <div className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-        ✓ No App Required
-      </div>
-
-      <div className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-        ✓ Setup In Minutes
-      </div>
-
-      <div className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-        ✓ Mobile Friendly
-      </div>
-
-      <div className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-        ✓ Works With Existing Workflow
-      </div>
-    </div>
-
-  </div>
-</section>}
-        </>
-    )
+    </section>
+  );
 }
