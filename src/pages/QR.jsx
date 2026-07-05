@@ -52,7 +52,7 @@ if (!business) {
   <Logo size="lg" />
 
   <p className="text-gray-500 mt-3">
-    🎉 🎉 Your LoveView review system is ready.
+    🎉 Your LoveView review system is ready.
   </p>
 
 </div>

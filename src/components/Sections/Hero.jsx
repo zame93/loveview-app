@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <>
@@ -25,20 +26,14 @@ Capture Private Feedback Before It Becomes Public.
               and understand customer satisfaction from one simple dashboard.
             </p>
 
-            <div className="mt-8 flex gap-4">
-              <a
-  href="https://forms.gle/C9pJwNvVt4EM8trF9"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="rounded-lg bg-indigo-600 px-6 py-3 text-white hover:bg-indigo-700 transition"
->
-  Start Free Trial
-</a>
-
-              <button className="rounded-lg border border-slate-300 px-6 py-3">
-                See How It Works
-              </button>
-            </div>
+            <div className="mt-8">
+  <Link
+    to="/onboarding"
+    className="inline-flex items-center rounded-lg bg-indigo-600 px-8 py-3 font-semibold text-white shadow-lg hover:bg-indigo-700 transition"
+  >
+    Start Free Trial
+  </Link>
+</div>
 
             <div className="mt-10 flex flex-wrap gap-4 text-sm text-slate-600">
               <span>✓ 2-Minute Setup</span>
