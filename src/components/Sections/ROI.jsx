@@ -1,69 +1,79 @@
+import { Container, Section, Grid } from "../layout-system";
+import { Card, Badge, SectionTitle } from "../ui";
+
 export default function ROI() {
   return (
-    <section className="py-16 bg-white">
-      <div className="mx-auto max-w-6xl px-6 text-center">
+    <Section className="bg-white">
+      <Container>
+        <SectionTitle
+          badge={<Badge>Dashboard Insights</Badge>}
+          title="Understand What Your Customers Are Really Saying"
+          subtitle="LoveView turns customer ratings and private feedback into actionable insights that help you improve every customer experience."
+        />
 
-        <h2 className="text-5xl font-bold">
-          Understand What Your Customers Are Really Saying
-        </h2>
-
-        <p className="mt-6 text-xl text-slate-600 max-w-3xl mx-auto">
-          LoveView turns customer ratings and private feedback into actionable
-          insights that help you improve every customer experience.
-        </p>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-4">
-
-          <div className="rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+        {/* Feature Cards */}
+        <Grid
+          cols="grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          gap="gap-8"
+          className="mt-16 items-stretch"
+        >
+          <Card hover className="h-full flex flex-col">
             <h3 className="text-2xl font-bold text-indigo-600">
               Average Rating
             </h3>
 
-            <p className="mt-3 text-slate-600">
+            <p className="mt-3 flex-1 text-slate-600 leading-7">
               Know how customers rate their experience.
             </p>
-          </div>
+          </Card>
 
-          <div className="rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+          <Card hover className="h-full flex flex-col">
             <h3 className="text-2xl font-bold text-indigo-600">
               Customer Satisfaction
             </h3>
 
-            <p className="mt-3 text-slate-600">
+            <p className="mt-3 flex-1 text-slate-600 leading-7">
               Track customer satisfaction over time.
             </p>
-          </div>
+          </Card>
 
-          <div className="rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+          <Card hover className="h-full flex flex-col">
             <h3 className="text-2xl font-bold text-indigo-600">
               Private Feedback
             </h3>
 
-            <p className="mt-3 text-slate-600">
+            <p className="mt-3 flex-1 text-slate-600 leading-7">
               Understand what customers don't share publicly.
             </p>
-          </div>
+          </Card>
 
-          <div className="rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition">
+          <Card hover className="h-full flex flex-col">
             <h3 className="text-2xl font-bold text-indigo-600">
               Rating Trends
             </h3>
 
-            <p className="mt-3 text-slate-600">
+            <p className="mt-3 flex-1 text-slate-600 leading-7">
               Monitor improvements in customer experience over time.
             </p>
-          </div>
+          </Card>
+        </Grid>
 
-        </div>
-
-        <div className="mt-16 rounded-3xl bg-indigo-600 p-12 text-white shadow-2xl">
-
+        {/* Dashboard Preview */}
+        <Card
+          variant="primary"
+          padding="p-12"
+          shadow="shadow-2xl"
+          className="mt-16"
+        >
           <h3 className="text-3xl font-bold">
             LoveView Dashboard
           </h3>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-
+          <Grid
+            cols="grid-cols-1 md:grid-cols-2"
+            gap="gap-6"
+            className="mt-10"
+          >
             <div className="rounded-2xl bg-white/10 p-6">
               <div className="text-3xl font-bold">
                 4.8 ★
@@ -103,17 +113,14 @@ export default function ROI() {
                 Private Feedback
               </div>
             </div>
+          </Grid>
 
-          </div>
-
-          <p className="mt-10 text-lg text-indigo-100 max-w-2xl mx-auto">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-lg leading-8 text-indigo-100">
             View customer ratings, satisfaction trends, and private feedback
-            from one simple dashboard designed for local businesses.
+            from one simple dashboard designed specifically for local businesses.
           </p>
-
-        </div>
-
-      </div>
-    </section>
+        </Card>
+      </Container>
+    </Section>
   );
 }

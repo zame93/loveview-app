@@ -1,133 +1,189 @@
 import { Link } from "react-router-dom";
+import { Container, Section, Grid } from "../layout-system";
+import { Button, Card, Badge } from "../ui";
+
 export default function Hero() {
   return (
-    <>
-      {<section className="px-6 pt-6 pb-16">
-
-        <div className="mx-auto max-w-7xl grid gap-12 lg:grid-cols-2 items-center">
-
+    <Section
+      fullScreen
+      className="flex items-center"
+    >
+      <Container>
+        <Grid
+          cols="grid-cols-1 lg:grid-cols-2"
+          gap="gap-16"
+          className="items-center"
+        >
+          {/* Left */}
           <div>
-
-            <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm text-indigo-700">
+            <Badge>
               Google Reviews • Private Feedback • Customer Insights
-            </span>
+            </Badge>
 
-            <h1 className="mt-6 text-5xl font-bold leading-tight">
-  Collect More
-Google Reviews.
-<br />
-<span className="text-indigo-600">
-Capture Private Feedback Before It Becomes Public.
-</span>
-</h1>
+            <h1 className="mt-8 text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
+              Collect More
+              <br />
+              <span className="text-slate-900">
+                Google Reviews.
+              </span>
 
-            <p className="mt-6 text-xl text-slate-600">
-              LoveView helps restaurants, cafés, salons and local businesses collect more Google reviews, capture Private Feedback, 
-              and understand customer satisfaction from one simple dashboard.
+              <br />
+
+              <span className="text-indigo-600">
+                Capture Private Feedback Before It Becomes Public.
+              </span>
+            </h1>
+
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
+              LoveView helps restaurants, cafés, salons and local businesses
+              collect more Google reviews, capture private customer feedback,
+              and understand customer satisfaction through one simple dashboard.
             </p>
 
-            <div className="mt-8">
-  <Link
-    to="/onboarding"
-    className="inline-flex items-center rounded-lg bg-indigo-600 px-8 py-3 font-semibold text-white shadow-lg hover:bg-indigo-700 transition"
-  >
-    Start Free Trial
-  </Link>
-</div>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link to="/onboarding">
+                <Button size="lg">
+                  Start Free Trial
+                </Button>
+              </Link>
 
-            <div className="mt-10 flex flex-wrap gap-4 text-sm text-slate-600">
+              <a
+                href="https://forms.gle/C9pJwNvVt4EM8trF9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="secondary"
+                  size="lg"
+                >
+                  Book Demo
+                </Button>
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-6 text-sm font-medium text-slate-600">
               <span>✓ 2-Minute Setup</span>
               <span>✓ QR Code Included</span>
               <span>✓ No App Required</span>
               <span>✓ Works With Google Reviews</span>
             </div>
-
           </div>
 
-          <div>
+          {/* Right */}
+          <Card
+            hover
+            shadow="shadow-2xl"
+            padding="p-10"
+            className="h-full"
+          >
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-bold">
+                Live Review Dashboard
+              </h3>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl">
+              <Badge variant="success">
+                Live
+              </Badge>
+            </div>
 
-  <div className="flex items-center justify-between">
-    <h3 className="font-bold text-lg">
-      Live Review Dashboard
-    </h3>
+            {/* KPI Cards */}
+            <div className="mt-8 grid grid-cols-2 gap-4">
 
-    <span className="rounded-full bg-green-100 px-3 py-1 text-sm text-green-700">
-      Live
-    </span>
-  </div>
+              <div className="min-h-[120px] rounded-2xl bg-slate-50 p-5 flex flex-col justify-center text-center">
+                <div className="text-4xl font-bold text-indigo-600">
+                  4.8
+                </div>
 
-  <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="mt-2 text-sm text-slate-500">
+                  Average Rating
+                </div>
+              </div>
 
-    <div className="rounded-xl bg-slate-50 p-4">
-      <div className="text-3xl font-bold text-indigo-600">
-        4.8
-      </div>
-      <div className="text-sm text-slate-500">
-        Average Rating
-      </div>
-    </div>
+              <div className="min-h-[120px] rounded-2xl bg-slate-50 p-5 flex flex-col justify-center text-center">
+                <div className="text-4xl font-bold text-indigo-600">
+                  482
+                </div>
 
-    <div className="rounded-xl bg-slate-50 p-4">
-      <div className="text-3xl font-bold text-indigo-600">
-        482
-      </div>
-      <div className="text-sm text-slate-500">
-        Google Reviews
-      </div>
-    </div>
+                <div className="mt-2 text-sm text-slate-500">
+                  Google Reviews
+                </div>
+              </div>
 
-    <div className="rounded-xl bg-slate-50 p-4">
-      <div className="text-3xl font-bold text-green-600">
-        92%
-      </div>
-      <div className="text-sm text-slate-500">
-        Satisfaction
-      </div>
-    </div>
+              <div className="min-h-[120px] rounded-2xl bg-slate-50 p-5 flex flex-col justify-center text-center">
+                <div className="text-4xl font-bold text-green-600">
+                  92%
+                </div>
 
-    <div className="rounded-xl bg-slate-50 p-4">
-      <div className="text-3xl font-bold text-violet-600">
-        134
-      </div>
-      <div className="text-sm text-slate-500">
-        Private Feedback
-      </div>
-    </div>
+                <div className="mt-2 text-sm text-slate-500">
+                  Satisfaction
+                </div>
+              </div>
 
-  </div>
+              <div className="min-h-[120px] rounded-2xl bg-slate-50 p-5 flex flex-col justify-center text-center">
+                <div className="text-4xl font-bold text-violet-600">
+                  134
+                </div>
 
-  <div className="mt-8 rounded-xl bg-slate-50 p-5">
-    <div className="text-sm font-semibold text-slate-700">
-      Recent Customer Activity
-    </div>
+                <div className="mt-2 text-sm text-slate-500">
+                  Private Feedback
+                </div>
+              </div>
 
-    <div className="mt-4 space-y-3">
+            </div>
 
-      <div className="flex justify-between">
-        <span>⭐⭐⭐⭐⭐ Amazing food & service</span>
-        <span className="text-green-600">Posted</span>
-      </div>
+            {/* Activity Feed */}
+            <div className="mt-8 rounded-2xl bg-slate-50 p-8">
+              <h4 className="text-sm font-semibold text-slate-700">
+                Recent Customer Activity
+              </h4>
 
-      <div className="flex justify-between">
-        <span>⭐⭐⭐⭐ Great customer experience</span>
-        <span className="text-green-600">Posted</span>
-      </div>
+              <div className="mt-6 space-y-5">
 
-      <div className="flex justify-between">
-        <span>⭐⭐ Slow delivery issue</span>
-        <span className="text-orange-500">Private Feedback</span>
-      </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-sm text-slate-700">
+                    ⭐⭐⭐⭐⭐ Amazing food &amp; service
+                  </span>
 
-    </div>
-  </div>
+                  <Badge
+                    variant="success"
+                    size="sm"
+                  >
+                    Posted
+                  </Badge>
+                </div>
 
-</div>
-          </div>
-        </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-sm text-slate-700">
+                    ⭐⭐⭐⭐ Great customer experience
+                  </span>
 
-        </section>}
-    </>
+                  <Badge
+                    variant="success"
+                    size="sm"
+                  >
+                    Posted
+                  </Badge>
+                </div>
+
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-sm text-slate-700">
+                    ⭐⭐ Slow delivery issue
+                  </span>
+
+                  <Badge
+                    variant="warning"
+                    size="sm"
+                  >
+                    Private
+                  </Badge>
+                </div>
+
+              </div>
+            </div>
+
+          </Card>
+        </Grid>
+      </Container>
+    </Section>
   );
 }

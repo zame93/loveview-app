@@ -1,15 +1,15 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
-import Hero from "../components/Sections/Hero";
-import Journey from "../components/Sections/Journey";
-import Recovery from "../components/Sections/Recovery";
-import ROI from "../components/Sections/ROI";
-import WhyLoveView from "../components/Sections/WhyLoveView";
-import Plans from "../components/Sections/Plans";
-import GrowthServices from "../components/Sections/GrowthServices";
-import FAQ from "../components/Sections/FAQ";
-import CTA from "../components/Sections/CTA";
+import Hero from "../components/sections/Hero";
+import Journey from "../components/sections/Journey";
+import Recovery from "../components/sections/Recovery";
+import ROI from "../components/sections/ROI";
+import WhyLoveView from "../components/sections/WhyLoveView";
+import Plans from "../components/sections/Plans";
+import GrowthServices from "../components/sections/GrowthServices";
+import FAQ from "../components/sections/FAQ";
+import CTA from "../components/sections/CTA";
 
 
 export default function Home() {
