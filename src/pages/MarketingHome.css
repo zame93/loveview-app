@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
-/* LOVEVIEW — NEW COLORFUL VISUAL IDENTITY */
+/* =====================================================
+   LOVEVIEW — COLORFUL VISUAL IDENTITY
+   ===================================================== */
 
 .marketing-site {
   --marketing-purple: #315EEA;
@@ -25,7 +27,9 @@
   color: #315EEA !important;
 }
 
-/* Announcement and navigation */
+/* =====================================================
+   ANNOUNCEMENT AND NAVIGATION
+   ===================================================== */
 
 .marketing-announcement {
   background: #EAF1FF;
@@ -41,7 +45,9 @@
   color: #526176;
 }
 
-/* Buttons */
+/* =====================================================
+   BUTTONS
+   ===================================================== */
 
 .marketing-button-primary {
   background: #315EEA;
@@ -59,7 +65,9 @@
   border-color: #C8D8FF;
 }
 
-/* Hero */
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
 
 .marketing-hero {
   background: #F7F9FC;
@@ -101,7 +109,9 @@
   color: #0E9F9A;
 }
 
-/* Hero product preview */
+/* =====================================================
+   HERO PRODUCT PREVIEW
+   ===================================================== */
 
 .marketing-preview-card {
   border-color: #E0E7F1;
@@ -141,7 +151,9 @@
   border-color: #F4E5C6;
 }
 
-/* Value strip */
+/* =====================================================
+   VALUE STRIP
+   ===================================================== */
 
 .marketing-value-strip {
   background: #EFF4FC;
@@ -156,7 +168,9 @@
   color: #315EEA;
 }
 
-/* Gemini benefit cards */
+/* =====================================================
+   GEMINI BENEFIT CARDS
+   ===================================================== */
 
 .marketing-benefits-section,
 .marketing-services-section {
@@ -214,7 +228,9 @@
   color: #34476C;
 }
 
-/* Setup steps */
+/* =====================================================
+   SETUP STEPS
+   ===================================================== */
 
 .marketing-service-card {
   background: white;
@@ -226,7 +242,9 @@
   background: #EDF3FF;
 }
 
-/* Gemini eligibility panel */
+/* =====================================================
+   GEMINI ELIGIBILITY PANEL
+   ===================================================== */
 
 .marketing-eligibility-note {
   background: #EDF6F5;
@@ -238,7 +256,9 @@
   color: #087F79;
 }
 
-/* Complimentary QR section: remove dark background */
+/* =====================================================
+   COMPLIMENTARY QR SECTION
+   ===================================================== */
 
 .marketing-qr-section {
   background: #EDF6F5;
@@ -288,7 +308,9 @@
   color: #69778A;
 }
 
-/* Pricing */
+/* =====================================================
+   PRICING
+   ===================================================== */
 
 .marketing-pricing-section {
   background: #F7F9FC;
@@ -309,7 +331,9 @@
   color: #315EEA;
 }
 
-/* FAQ */
+/* =====================================================
+   FAQ
+   ===================================================== */
 
 .marketing-faq-section,
 .marketing-closing-section {
@@ -325,7 +349,9 @@
   color: #315EEA;
 }
 
-/* Closing section */
+/* =====================================================
+   CLOSING SECTION
+   ===================================================== */
 
 .marketing-closing-card {
   color: #263449;
@@ -355,14 +381,18 @@
   background: #254AC4;
 }
 
-/* Footer */
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 .marketing-footer {
   background: #F7F9FC;
   border-color: #DFE6EF;
 }
 
-/* Mobile */
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media (max-width: 760px) {
   .marketing-nav-links.is-open {
