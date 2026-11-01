@@ -13,24 +13,21 @@ const photoCredit =
 const services = [
   {
     number: "01",
-    title: "Your Google Business Profile",
+    title: "Google Business Profile setup",
     description:
-      "Set up a new profile or improve the one you already have. We review your business name, categories, contact details, hours and the information customers rely on.",
-    accent: "blue",
+      "Set up your business profile or improve your existing one. We'll review your business name, categories, contact details, opening hours and the information customers need before visiting.",
   },
   {
     number: "02",
     title: "Verification guidance",
     description:
-      "Understand the verification steps available for your business and get practical help working through them. Google controls the verification process and final decision.",
-    accent: "coral",
+      "Understand the verification steps available for your business and get practical help working through them. Google controls the available methods and final verification decision.",
   },
   {
     number: "03",
-    title: "Gemini connection assistance",
+    title: "Gemini setup assistance",
     description:
-      "Check whether your verified profile is eligible to connect with Gemini and learn how to use supported features when they are available to your account.",
-    accent: "teal",
+      "Check whether your verified Business Profile is eligible to connect with Gemini and learn how to use supported features when they're available to your account.",
   },
 ];
 
@@ -43,16 +40,24 @@ const steps = [
   },
   {
     number: "02",
-    title: "We guide the setup",
+    title: "We guide your setup",
     description:
-      "We review your profile, explain the next steps and help with eligible Gemini connection features.",
+      "We review your profile, explain what needs attention and help you explore eligible Gemini features.",
   },
   {
     number: "03",
-    title: "Get your LoveView QR",
+    title: "Receive your LoveView QR",
     description:
-      "Receive a complimentary QR experience configured for your business so customers can share feedback.",
+      "Get a complimentary QR experience configured for your business, making it easier for customers to share feedback.",
   },
+];
+
+const inclusions = [
+  "Google Business Profile setup or optimization",
+  "Business information and category review",
+  "Verification guidance",
+  "Gemini eligibility and setup assistance",
+  "Complimentary LoveView QR setup",
 ];
 
 const faqs = [
@@ -69,12 +74,12 @@ const faqs = [
   {
     question: "Can you guarantee that my business will appear in Gemini?",
     answer:
-      "No. We can help you prepare your profile and check access to supported features. Google controls eligibility, recommendations and search results. We cannot guarantee rankings or placement in Gemini answers.",
+      "No. We can help prepare your profile and check access to supported features. Google controls eligibility, recommendations and search results. We cannot guarantee rankings or placement in Gemini answers.",
   },
   {
     question: "Is Google Business Profile free?",
     answer:
-      "Google Business Profile is a free Google service. The ₹2,000 is LoveView's one-time assistance fee, not a Google fee.",
+      "Google Business Profile is a free Google service. The ₹2,000 is LoveView's one-time assistance fee, not a fee charged by Google.",
   },
   {
     question: "Is there a monthly subscription?",
@@ -86,20 +91,6 @@ const faqs = [
     answer:
       "No. You should retain control of your Google account and complete sensitive account actions yourself. Never share your password or verification codes.",
   },
-];
-
-const qrPattern = [
-  "11111100111",
-  "10000100101",
-  "10110110111",
-  "10110100001",
-  "10000111101",
-  "11111101010",
-  "00000010101",
-  "11010111011",
-  "10101100100",
-  "11101011101",
-  "10111010111",
 ];
 
 function Arrow({ diagonal = false }) {
@@ -152,11 +143,28 @@ function Check() {
   );
 }
 
+const qrPattern = [
+  "11111100111",
+  "10000100101",
+  "10110110111",
+  "10110100001",
+  "10000111101",
+  "11111101010",
+  "00000010101",
+  "11010111011",
+  "10101100100",
+  "11101011101",
+  "10111010111",
+];
+
 function QrArtwork() {
   return (
     <div className="lv-qr-art" aria-label="Illustrative QR code artwork">
       {qrPattern.join("").split("").map((cell, index) => (
-        <span className={cell === "1" ? "lv-qr-cell-on" : ""} key={index} />
+        <span
+          className={cell === "1" ? "lv-qr-cell-on" : ""}
+          key={index}
+        />
       ))}
     </div>
   );
@@ -210,14 +218,17 @@ const styles = `
 
 .lv-shell {
   width: min(1200px, calc(100% - 64px));
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* TOP ANNOUNCEMENT */
+
 .lv-topline {
+  min-height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 35px;
   padding: 6px 16px;
   background: #EAEFEA;
   color: #53675F;
@@ -227,10 +238,12 @@ const styles = `
   letter-spacing: .035em;
 }
 
+/* HEADER */
+
 .lv-header {
   position: relative;
   z-index: 30;
-  background: rgba(251,248,242,.94);
+  background: rgba(251,248,242,.96);
   border-bottom: 1px solid rgba(32,48,71,.08);
 }
 
@@ -238,7 +251,9 @@ const styles = `
   min-height: 82px;
   display: flex;
   align-items: center;
-  gap: 36px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 28px;
 }
 
 .lv-brand {
@@ -255,19 +270,28 @@ const styles = `
 .lv-nav-links {
   display: flex;
   align-items: center;
-  gap: 31px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(16px, 2vw, 27px);
   margin-left: auto;
   color: #596779;
   font-size: 13px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .lv-nav-links a {
+  white-space: nowrap;
   transition: color .2s ease;
 }
 
 .lv-nav-links a:hover {
   color: var(--lv-blue);
+}
+
+/* The mobile CTA must not appear in the laptop navigation. */
+.lv-mobile-cta {
+  display: none !important;
 }
 
 .lv-nav-cta,
@@ -282,11 +306,15 @@ const styles = `
   border-radius: 5px;
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
   transition: background .2s ease, transform .2s ease;
 }
 
 .lv-nav-cta {
+  flex: 0 0 auto;
   min-height: 43px;
+  padding-left: 17px;
+  padding-right: 17px;
   background: var(--lv-ink);
   color: white !important;
 }
@@ -315,18 +343,40 @@ const styles = `
   background: currentColor;
 }
 
+/* BUTTONS */
+
+.lv-button-dark {
+  background: var(--lv-ink);
+  color: white !important;
+}
+
+.lv-button-outline {
+  border-color: #C9C2B7;
+  background: transparent;
+  color: var(--lv-ink);
+}
+
+.lv-button-outline:hover {
+  background: #F1ECE4;
+}
+
 /* HERO */
 
 .lv-hero {
-  padding: 74px 0 86px;
+  padding: 88px 0 96px;
   background: var(--lv-ivory);
 }
 
 .lv-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(44px, 7vw, 92px);
+  gap: clamp(55px, 6vw, 82px);
+}
+
+.lv-hero-copy {
+  min-width: 0;
+  max-width: 590px;
 }
 
 .lv-overline {
@@ -349,13 +399,13 @@ const styles = `
 }
 
 .lv-hero h1 {
-  max-width: 610px;
+  max-width: 570px;
   margin: 0 0 23px;
   color: var(--lv-ink);
   font-family: var(--lv-serif);
-  font-size: clamp(48px, 5.3vw, 72px);
+  font-size: clamp(52px, 4.4vw, 66px);
   font-weight: 400;
-  line-height: 1.02;
+  line-height: 1.08;
   letter-spacing: -.035em;
 }
 
@@ -365,11 +415,11 @@ const styles = `
 }
 
 .lv-hero-description {
-  max-width: 510px;
+  max-width: 500px;
   margin: 0 0 28px;
   color: var(--lv-muted);
   font-size: 15px;
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 .lv-hero-actions {
@@ -377,21 +427,6 @@ const styles = `
   align-items: center;
   flex-wrap: wrap;
   gap: 13px;
-}
-
-.lv-button-dark {
-  background: var(--lv-ink);
-  color: white !important;
-}
-
-.lv-button-outline {
-  border-color: #C9C2B7;
-  background: transparent;
-  color: var(--lv-ink);
-}
-
-.lv-button-outline:hover {
-  background: #F1ECE4;
 }
 
 .lv-hero-points {
@@ -414,21 +449,25 @@ const styles = `
   color: var(--lv-teal);
 }
 
+/* HERO PHOTO */
+
 .lv-hero-visual {
   position: relative;
   min-width: 0;
+  padding-left: 12px;
 }
 
 .lv-hero-photo-frame {
   position: relative;
-  min-height: 520px;
+  min-height: 550px;
   overflow: hidden;
+  margin: 0;
   background: #D9D5CC;
 }
 
 .lv-hero-photo {
   width: 100%;
-  height: 520px;
+  height: 550px;
   object-fit: cover;
   object-position: center 36%;
 }
@@ -438,7 +477,7 @@ const styles = `
   inset: auto 0 0;
   min-height: 135px;
   padding: 48px 28px 22px;
-  background: linear-gradient(transparent, rgba(24,35,39,.64));
+  background: linear-gradient(transparent, rgba(24,35,39,.68));
   color: white;
 }
 
@@ -474,8 +513,9 @@ const styles = `
 
 .lv-floating-note {
   position: absolute;
+  z-index: 2;
   top: 32px;
-  left: -32px;
+  left: -20px;
   max-width: 190px;
   padding: 14px 17px;
   background: var(--lv-paper);
@@ -500,7 +540,7 @@ const styles = `
   line-height: 1.18;
 }
 
-/* SMALL INTRO BAND */
+/* INTRODUCTION */
 
 .lv-intro-band {
   padding: 30px 0;
@@ -532,7 +572,7 @@ const styles = `
   line-height: 1.7;
 }
 
-/* SECTION BASICS */
+/* SHARED SECTION STYLES */
 
 .lv-section {
   padding: 100px 0;
@@ -566,7 +606,7 @@ const styles = `
   line-height: 1.85;
 }
 
-/* SERVICE LIST */
+/* SERVICES */
 
 .lv-services {
   background: var(--lv-paper);
@@ -586,10 +626,10 @@ const styles = `
 
 .lv-service-row {
   display: grid;
-  grid-template-columns: 80px minmax(200px,.8fr) minmax(280px,1fr) 28px;
+  grid-template-columns: 65px minmax(200px,.8fr) minmax(280px,1fr) 24px;
   align-items: start;
   gap: 25px;
-  padding: 30px 0;
+  padding: 32px 0;
   border-bottom: 1px solid var(--lv-line);
 }
 
@@ -606,7 +646,7 @@ const styles = `
   font-family: var(--lv-serif);
   font-size: 25px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .lv-service-row p {
@@ -672,7 +712,7 @@ const styles = `
   line-height: 1.8;
 }
 
-/* QR STORY */
+/* LOVEVIEW QR */
 
 .lv-qr-section {
   padding: 100px 0;
@@ -718,9 +758,9 @@ const styles = `
 
 .lv-qr-card {
   position: relative;
+  width: 100%;
   max-width: 430px;
   justify-self: end;
-  width: 100%;
   padding: 30px;
   background: #F2EEE6;
   border: 1px solid #E7E0D5;
@@ -802,7 +842,7 @@ const styles = `
   text-align: center;
 }
 
-/* PRICE */
+/* PRICING */
 
 .lv-price-section {
   padding: 90px 0;
@@ -1072,12 +1112,7 @@ const styles = `
   font-size: 9px;
 }
 
-.lv-footer-bottom a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* ACCESSIBILITY */
+/* FOCUS STATES */
 
 .lv-site a:focus-visible,
 .lv-site button:focus-visible,
@@ -1086,55 +1121,57 @@ const styles = `
   outline-offset: 3px;
 }
 
-/* TABLET */
+/* LAPTOP AND TABLET */
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) and (min-width: 701px) {
   .lv-shell {
-    width: min(100% - 44px, 760px);
+    width: calc(100% - 52px);
   }
 
   .lv-nav {
-    gap: 20px;
+    gap: 17px;
   }
 
   .lv-nav-links {
-    gap: 18px;
+    gap: 15px;
+    font-size: 12px;
   }
 
-  .lv-hero {
-    padding: 60px 0 70px;
+  .lv-nav-cta {
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 12px;
   }
 
   .lv-hero-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    gap: 45px;
+  }
+
+  .lv-hero h1 {
+    font-size: clamp(48px,5.3vw,60px);
   }
 
   .lv-hero-photo-frame,
   .lv-hero-photo {
-    min-height: 440px;
-    height: 440px;
-  }
-
-  .lv-floating-note {
-    left: -16px;
+    height: 480px;
+    min-height: 480px;
   }
 
   .lv-services-heading {
-    gap: 25px;
+    gap: 28px;
   }
 
   .lv-service-row {
-    grid-template-columns: 52px minmax(170px,.8fr) minmax(220px,1fr) 20px;
-    gap: 16px;
+    grid-template-columns: 50px minmax(170px,.8fr) minmax(230px,1fr) 20px;
+    gap: 17px;
   }
 
   .lv-price-layout {
-    gap: 40px;
+    gap: 45px;
   }
 
   .lv-faq-layout {
-    gap: 45px;
+    gap: 48px;
   }
 }
 
@@ -1177,19 +1214,20 @@ const styles = `
     padding: 10px 22px 20px;
     border-bottom: 1px solid var(--lv-line);
     background: var(--lv-ivory);
+    white-space: normal;
   }
 
   .lv-nav-links.lv-menu-open {
     display: flex;
   }
 
-  .lv-nav-links a {
+  .lv-nav-links > a:not(.lv-mobile-cta) {
     padding: 12px 0;
     border-bottom: 1px solid var(--lv-line);
   }
 
   .lv-nav-links .lv-mobile-cta {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     margin-top: 12px;
     padding: 13px 18px;
@@ -1199,7 +1237,7 @@ const styles = `
   }
 
   .lv-hero {
-    padding: 47px 0 55px;
+    padding: 50px 0 55px;
   }
 
   .lv-hero-grid {
@@ -1207,9 +1245,13 @@ const styles = `
     gap: 36px;
   }
 
+  .lv-hero-copy {
+    max-width: none;
+  }
+
   .lv-hero h1 {
     max-width: 520px;
-    font-size: clamp(47px, 12vw, 62px);
+    font-size: clamp(47px,12vw,62px);
   }
 
   .lv-hero-description {
@@ -1229,6 +1271,10 @@ const styles = `
   .lv-hero-photo {
     min-height: 390px;
     height: 390px;
+  }
+
+  .lv-hero-visual {
+    padding-left: 8px;
   }
 
   .lv-floating-note {
@@ -1265,7 +1311,7 @@ const styles = `
   }
 
   .lv-section-title {
-    font-size: clamp(37px, 9vw, 47px);
+    font-size: clamp(37px,9vw,47px);
   }
 
   .lv-services-heading {
@@ -1442,7 +1488,12 @@ export default function Home() {
 
         <header className="lv-header">
           <nav className="lv-nav lv-shell" aria-label="Main navigation">
-            <a className="lv-brand" href="#lv-top" onClick={closeMenu}>
+            <a
+              className="lv-brand"
+              href="#lv-top"
+              onClick={closeMenu}
+              aria-label="LoveView home"
+            >
               <Logo />
             </a>
 
@@ -1458,10 +1509,11 @@ export default function Home() {
             </button>
 
             <div className={`lv-nav-links ${menuOpen ? "lv-menu-open" : ""}`}>
-              <a href="#lv-service" onClick={closeMenu}>What we do</a>
-              <a href="#lv-process" onClick={closeMenu}>The process</a>
+              <a href="#lv-service" onClick={closeMenu}>Our service</a>
+              <a href="#lv-process" onClick={closeMenu}>How it works</a>
               <a href="#lv-qr" onClick={closeMenu}>LoveView QR</a>
-              <a href="#lv-faq" onClick={closeMenu}>Questions</a>
+              <a href="#lv-faq" onClick={closeMenu}>FAQs</a>
+
               <a
                 className="lv-mobile-cta"
                 href={inquiryUrl}
@@ -1493,15 +1545,15 @@ export default function Home() {
                 </p>
 
                 <h1>
-                  The business you've built deserves to be{" "}
-                  <em>found.</em>
+                  Make your business easier to find on{" "}
+                  <em>Google.</em>
                 </h1>
 
                 <p className="lv-hero-description">
-                  Your customers look you up before they visit. We help make
-                  your Google Business Profile clearer, guide you through
-                  verification and explore Gemini features when your profile
-                  is eligible.
+                  We help local businesses set up or improve their Google
+                  Business Profile, get guidance with verification and check
+                  eligibility for supported Gemini features. Your business
+                  also gets a complimentary LoveView customer feedback QR.
                 </p>
 
                 <div className="lv-hero-actions">
@@ -1511,11 +1563,11 @@ export default function Home() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Get started for ₹2,000 <Arrow />
+                    Get your Google profile set up — ₹2,000 <Arrow />
                   </a>
 
                   <a className="lv-button lv-button-outline" href="#lv-service">
-                    See what is included
+                    See what's included
                   </a>
                 </div>
 
@@ -1539,14 +1591,20 @@ export default function Home() {
                     alt="A boutique owner working in her clothing store"
                     fetchPriority="high"
                   />
+
                   <figcaption className="lv-photo-overlay">
                     <span>Behind every local business</span>
-                    <strong>There is a person who put their heart into it.</strong>
+                    <strong>
+                      There is a person who put their heart into it.
+                    </strong>
                   </figcaption>
                 </figure>
 
                 <p className="lv-photo-credit">
-                  Photo: <a href={photoCredit} target="_blank" rel="noreferrer">Vitaly Gariev / Unsplash</a>
+                  Photo:{" "}
+                  <a href={photoCredit} target="_blank" rel="noreferrer">
+                    Vitaly Gariev / Unsplash
+                  </a>
                 </p>
               </div>
             </div>
@@ -1557,9 +1615,10 @@ export default function Home() {
               <p className="lv-intro-statement">
                 Good work deserves an online presence that reflects it.
               </p>
+
               <p className="lv-intro-side">
-                A practical service for boutiques, clinics, cafés, studios and
-                the local businesses people rely on.
+                A practical service for boutiques, clinics, cafés, studios
+                and the local businesses people rely on.
               </p>
             </div>
           </section>
@@ -1576,8 +1635,8 @@ export default function Home() {
 
                 <p className="lv-section-lead">
                   No complicated software to learn. LoveView gives you
-                  practical, one-to-one assistance with the essentials of
-                  your business presence online.
+                  practical, one-to-one assistance with the essentials
+                  of your business presence online.
                 </p>
               </div>
 
@@ -1698,11 +1757,9 @@ export default function Home() {
                 <div className="lv-price-rule" />
 
                 <ul className="lv-price-includes">
-                  <li><Check /> Google Business Profile setup or optimization</li>
-                  <li><Check /> Business information review</li>
-                  <li><Check /> Verification guidance</li>
-                  <li><Check /> Gemini eligibility and setup assistance</li>
-                  <li><Check /> Complimentary LoveView QR setup</li>
+                  {inclusions.map((item) => (
+                    <li key={item}><Check /> {item}</li>
+                  ))}
                 </ul>
 
                 <a
@@ -1778,6 +1835,7 @@ export default function Home() {
                 <a className="lv-brand" href="#lv-top" aria-label="LoveView home">
                   <Logo />
                 </a>
+
                 <p className="lv-footer-description">
                   Helping local businesses build a clearer online presence
                   and make customer feedback easier to collect.
@@ -1793,10 +1851,12 @@ export default function Home() {
             </div>
 
             <div className="lv-footer-bottom">
-              <span>© {new Date().getFullYear()} LoveView. All rights reserved.</span>
               <span>
-                LoveView is an independent service and is not affiliated with
-                or endorsed by Google.
+                © {new Date().getFullYear()} LoveView. All rights reserved.
+              </span>
+              <span>
+                LoveView is an independent service and is not affiliated
+                with or endorsed by Google.
               </span>
             </div>
           </div>
